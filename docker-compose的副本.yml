@@ -11,9 +11,13 @@ services:
             - "80:80"
         external_links:
             - "php56:PHP-5.6"
+            - "php70:PHP-7.0"
+            - "php71:PHP-7.1"
             - "php72:PHP-7.2"
         depends_on:
             - "php56"
+            - "php70"
+            - "php71"
             - "php72"
         restart: always
 
@@ -25,8 +29,24 @@ services:
             - ./log/php56:/volume/log
         restart: always
 
+    php70:
+        image: scarwu/demo-php:7.0
+        volumes:
+            - ./config/PHP-7.0:/volume/config
+            - ./data:/volume/data
+            - ./log/php70:/volume/log
+        restart: always
+
+    php71:
+        image: scarwu/demo-php:7.1
+        volumes:
+            - ./config/PHP-7.1:/volume/config
+            - ./data:/volume/data
+            - ./log/php71:/volume/log
+        restart: always
+
     php72:
-        image: yonghua/php:7.2
+        image: scarwu/demo-php:7.2
         volumes:
             - ./config/PHP-7.2:/volume/config
             - ./data:/volume/data

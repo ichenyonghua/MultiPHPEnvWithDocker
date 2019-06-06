@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-IMAGE_NAME="scarwu/demo-nginx:1.14"
+IMAGE_NAME="yonghua/nginx"
 
 case "$1" in
     build)

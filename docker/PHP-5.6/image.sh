@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-IMAGE_NAME="scarwu/demo-php:5.6"
+IMAGE_NAME="yonghua/php:5.6"
 
 case "$1" in
     build)

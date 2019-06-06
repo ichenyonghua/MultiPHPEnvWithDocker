@@ -1,5 +1,5 @@
 FROM alpine:3.8
-MAINTAINER Scar Wu <xneriscool@gmail.com>
+MAINTAINER Andy Chan <yonghua.me@outlook.com>
 WORKDIR /build
 
 RUN VERSION="5.6" \
@@ -12,10 +12,8 @@ RUN mkdir /volume \
     && mkdir /volume/log \
     && mkdir /volume/data \
     && mkdir /volume/config \
-
     && mv $PHP_DIR/php.ini $PHP_DIR/php.ini.bak \
     && ln -s /volume/config/php.ini $PHP_DIR/php.ini \
-
     && mv $PHP_DIR/php-fpm.conf $PHP_DIR/php-fpm.conf.bak \
     && ln -s /volume/config/php-fpm.conf $PHP_DIR/php-fpm.conf
 

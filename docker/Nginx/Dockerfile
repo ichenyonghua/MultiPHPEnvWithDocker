@@ -1,16 +1,14 @@
-FROM alpine:3.8
-MAINTAINER Scar Wu <xneriscool@gmail.com>
+FROM alpine:3.9
+MAINTAINER Andy Chan <yonghua.me@outlook.com>
 WORKDIR /build
 
 RUN VERSION="1.14" \
     && NEED_APK="nginx>$VERSION" \
-    && apk --update add $NEED_APK
-
-RUN mkdir /volume \
+    && apk --update add $NEED_APK \
+	&& mkdir /volume \
     && mkdir /volume/log \
     && mkdir /volume/data \
     && mkdir /volume/config \
-
     && mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak \
     && ln -s /volume/config/nginx.conf /etc/nginx/nginx.conf
 
